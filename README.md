@@ -1,7 +1,7 @@
 # Nand2Tetris-Hack-Computer-JS-Reimplementation
 This is a minimalist/barebones in-browser javascript simulator of the famous Nand2Tetris course Hack Computer. It provides much control over the execution of programs and a better performance than the java implementation provided with the course (although with much less complementar functionality).
 
-[Online Simulator](hack-computer.magiwanders.com)
+[Online Simulator](http://hack-computer.magiwanders.com/)
 
 Video coming soon!
 
