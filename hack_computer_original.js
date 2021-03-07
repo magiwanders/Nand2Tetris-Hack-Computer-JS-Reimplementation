@@ -207,7 +207,7 @@ document.getElementById('rom_file').addEventListener('change', function() {
 })
 
 // Preload Pong
-fetch('./Pong.hack')
+fetch('https://raw.githubusercontent.com/magiwanders/Nand2Tetris-Hack-Computer-JS-Reimplementation/master/Pong.hack')
   .then(response => response.text())
   .then(text => {
     document.getElementById('program').textContent=text;
