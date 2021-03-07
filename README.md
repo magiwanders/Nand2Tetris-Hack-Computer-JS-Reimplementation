@@ -9,5 +9,7 @@ TODO:
 - Implement simple assembler so that assembly code can be directly input into the webpage.
 - Improve graphic design (virtually non-existant right now).
 - Create a keyboard buffer layer.
+- Add checks to number inputs.
+- Add BENCHMARK (measuring if actual frame time is lower than requested)
 
 Feel free to fork or contribute!
