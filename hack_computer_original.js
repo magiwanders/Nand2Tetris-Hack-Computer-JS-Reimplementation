@@ -6,7 +6,6 @@ var hack = new HACK_original()
 var refresh_button = document.getElementById('refresh_screen')
 var load_button = document.getElementById('load_button')
 var cycle_button = document.getElementById('cycle_button')
-var apply_button = document.getElementById('apply_button')
 var settings_button = document.getElementById('settings_button')
 var settings_div = document.getElementById('settings')
 var reset_button = document.getElementById('reset_button')
@@ -36,12 +35,6 @@ on_color = Default.hexToRGBA('#000000')
 
 reset_button.onclick = function () {
   hack.reset=1
-}
-
-apply_button.onclick = function() {
-  document.getElementById('setup_cycles_value').innerHTML = document.getElementById('setup_cycles').value
-  document.getElementById('cycles_per_frame_value').innerHTML = document.getElementById('cycles_per_frame').value
-  document.getElementById('fps_value').innerHTML = document.getElementById('fps').value
 }
 
 tutorial_button.onclick = function() {
@@ -178,6 +171,25 @@ document.getElementById('pixelON_color').addEventListener("change", watchON, fal
 function watchON(event) {
   on_color = Default.hexToRGBA(event.target.value)
   // console.log(colorOFF)
+}
+
+// Settings
+document.getElementById('setup_cycles').addEventListener("change", changeSetupCycles, false);
+
+function changeSetupCycles(event) {
+  document.getElementById('setup_cycles_value').innerHTML = document.getElementById('setup_cycles').value
+}
+
+document.getElementById('cycles_per_frame').addEventListener("change", changeCyclesPerFrame, false);
+
+function changeCyclesPerFrame(event) {
+  document.getElementById('cycles_per_frame_value').innerHTML = document.getElementById('cycles_per_frame').value
+}
+
+document.getElementById('fps').addEventListener("change", changeFPS, false);
+
+function changeFPS(event) {
+  document.getElementById('fps_value').innerHTML = document.getElementById('fps').value
 }
 
 // File

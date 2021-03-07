@@ -15,15 +15,33 @@
     <button id="tutorial_button">Show Tutorial</button>
 
     <div id='tutorial' style='display: none;'>
-      <p>Video link coming soon</p>
+      <p>Tutorial (Video link coming soon)</p>
       <ol>
         <li>Load the Hack Computer Binary file (.hack) at the bottom of the page.</li>
         <li>The binary will load automatically into the simulator. If you modify the binary from within the page click the 'Load in ROM' button to re-flash the ROM.</li>
-        <li>Adjust settings: (default values are for the Pong program)
+        <li> [Optional] Adjust settings: (default values are for the pong.hack program)
           <ul>
-            <li>Number of setup cycles: describes how many cpu cycles are run before refreshing the screen </li>
+            <li><b>Number of setup cycles</b>: describes how many cpu cycles are run before refreshing the screen for the first time. If set to zero the processor directly starts the screen refresh loop (see below).</li>
+            <li><b>Cycles per frame</b>: describes how many cpu cycles are run before rendering each frame.</li>
+            <li><b>FPS</b>: describes how many frames are rendered each second. If FPS==0, then only the setup cycles are performed. Execution can be advanced with the 'Cycle' or 'Frame' buttons.</li>
+            <li><b>Ram write process</b>: used for some programs (id est rect.hack or add.hack) that require some values in RAM before the execution to work.</li>
+            <li> <b>CLICK 'WRITE'</b> </li>
+            <li>A (rough) estimate of the processor frequency is given by [Cycles per frame]*[FPS]. This does not take into consideration JS overheads.</li>
           </ul>
         </li>
+        <li> <b>CLICK 'START'</b> </li>
+        <li>While running:
+          <ul>
+            <li>The keyboard is automatically routed to the KBD register at any moment.</li>
+            <li><b>STOP</b>: stops the executions, reset the PC and wipes RAM.</li>
+            <li><b>Reset</b>: just resets the PC.</li>
+            <li><b>Cycle</b>: advances the cpu by one cycle without refreshing the screen. Better only use when FPS==0.</li>
+            <li><b>Frame</b>: advances the cpu by [Cycles per frame] cycles and refreshes the screen once. </li>
+            <li><b>Manual Refresh</b>: refreshes the screen once. </li>
+          </ul>
+        </li>
+        <li>Colors of pixel can be changed!</li>
+        <li>Have fun! Write me at magi.wanders@gmail.com for any question or suggestion, or directly contribute to the project with code or bug reports, it is all open source!</li>
       </ol>
     </div>
 
@@ -45,7 +63,6 @@
       <label for="fps">Frames per second:</label>
       <input type="number" id="fps" name="fps" value = 60>
       <br>
-      <button id="apply_button">Apply</button>
 
       <br>
       <label for="fps">RAM[</label>
@@ -59,24 +76,22 @@
     </div>
 
     <br><br>
-    <button id="start_button" style="background: lightgreen;">START</button>
-    <button id="reset_button">Reset</button>
-    <button id="cycle_button">Cycle</button>
-    <button id="frame_button">Frame</button>
-    <p><b>Current Settings</b></p>
     <div style="display:inline-block;">Setup cycles: </div> <div id = "setup_cycles_value" style="display:inline-block;">5000000</div>
     <br>
     <div style="display:inline-block;">Cycles per frame: </div> <div id = "cycles_per_frame_value" style="display:inline-block;">35000</div>
     <br>
     <div style="display:inline-block;">FPS: </div> <div id = "fps_value" style="display:inline-block;">60</div>
-    <br><br>
 
-    <h3>SCREEN</h3>
+    <br><br>
+    <button id="start_button" style="background: lightgreen;">START</button>
+    <button id="reset_button">Reset</button>
+    <button id="cycle_button">Cycle</button>
+    <button id="frame_button">Frame</button>
+    <br><br>
+    <canvas id="screen" width=512 height=256 style="border: 1px solid;"> </canvas>
     <button id="refresh_screen">Manual Refresh</button>
     <label for="pixelOFF_color" style='margin-left: 100px;'>Pixel OFF:</label><input type="color" name="pixelOFF_color" id="pixelOFF_color" value="#EDEDED">
     <label for="pixelON_color" style='margin-left: 25px;'>Pixel ON:</label><input type="color" name="pixelON_color" id="pixelON_color" value="#000000">
-    <br><br>
-    <canvas id="screen" width=512 height=256 style="border: 1px solid;"> </canvas>
 
     <h3 id='KBD'>KBD=""</h3>
 
