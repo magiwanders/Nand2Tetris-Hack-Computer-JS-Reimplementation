@@ -90,8 +90,6 @@ start_button.onclick = function() {
 
     // Hack Computer
 
-    prompt() // For mobile
-
     const setup_cycles = parseInt(document.getElementById('setup_cycles_value').innerHTML, 10)
     const cycles_per_frame = parseInt(document.getElementById('cycles_per_frame_value').innerHTML, 10)
     const fps = parseInt(document.getElementById('fps_value').innerHTML, 10)
