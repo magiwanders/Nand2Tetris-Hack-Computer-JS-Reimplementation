@@ -11,5 +11,9 @@ TODO:
 - Create a keyboard buffer layer.
 - Add checks to number inputs.
 - Add BENCHMARK (measuring if actual frame time is lower than requested)
+- Dynamically changeable settings
+
+DISTANT FUTURE TODOS:
+- Rewrite using webassembly and in-browser multithreading
 
 Feel free to fork or contribute!
