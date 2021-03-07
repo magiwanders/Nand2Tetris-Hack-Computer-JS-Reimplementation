@@ -7,6 +7,7 @@ Video coming soon!
 
 TODO:
 - Implement simple assembler so that assembly code can be directly input into the webpage.
-- Improve graphic design (virtually non-existant right now)
+- Improve graphic design (virtually non-existant right now).
+- Create a keyboard buffer layer.
 
 Feel free to fork or contribute!
