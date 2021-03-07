@@ -12,7 +12,16 @@ var settings_div = document.getElementById('settings')
 var reset_button = document.getElementById('reset_button')
 var start_button = document.getElementById('start_button')
 var write_button = document.getElementById('write_button')
+var frame_button = document.getElementById('frame_button')
 var cycle, on_color, off_color
+
+frame_button.onclick = function() {
+  const cycles_per_frame = parseInt(document.getElementById('cycles_per_frame_value').innerHTML, 10)
+  for(var i=0; i<cycles_per_frame; i++) {
+     hack.cycle()
+  }
+  refresh_screen()
+}
 
 write_button.onclick = function() {
   const ram_cell = document.getElementById('ram_cell')
@@ -96,7 +105,7 @@ start_button.onclick = function() {
        hack.cycle()
     }
 
-    cycle = setInterval(function() {
+    if (fps!=0) cycle = setInterval(function() {
       for(var i=0; i<cycles_per_frame; i++) {
          hack.cycle()
       }
