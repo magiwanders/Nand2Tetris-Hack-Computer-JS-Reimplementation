@@ -205,3 +205,11 @@ document.getElementById('rom_file').addEventListener('change', function() {
 
     setTimeout(load_rom, 1000)
 })
+
+// Preload Pong
+fetch('./Pong.hack')
+  .then(response => response.text())
+  .then(text => {
+    document.getElementById('program').textContent=text;
+    setTimeout(load_rom, 1000)
+  })
