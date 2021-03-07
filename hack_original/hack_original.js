@@ -27,22 +27,16 @@ class HACK_original {
 
     this.addressM = this.cpu.registerA
     this.inM = this.ram.out(0, 0, this.addressM)
-    //console.log('inM (ram['+this.addressM+']) = '+this.inM)
-    // this.instruction = this.rom.out(this.pc)
 
-    var cpuOut = this.cpu.out(this.inM, this.instruction, this.reset)                   //;console.log(cpuOut[1])
+    var cpuOut = this.cpu.out(this.inM, this.instruction, this.reset)
     if(this.reset==1) this.reset=0
     this.outM = cpuOut[1][0]
     this.writeM = cpuOut[1][1]
-    this.addressM = cpuOut[1][2]                                                  //;if(this.writeM==1) console.log('Writing to ' + this.addressM)
+    this.addressM = cpuOut[1][2]
     this.pc = cpuOut[1][3]
 
     this.inM = this.ram.out(this.outM, this.writeM, this.addressM)
     this.instruction = this.rom.out(this.pc)
-
-     // console.log(this.ram.out(0, 0, 0))
-     // console.log(this.ram.out(0, 0, 1))
-     // console.log(this.ram.out(0, 0, 2))
   }
 
 }
