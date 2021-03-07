@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nand2Tetris</title>
+</head>
+
+<body>
+
+  <script src="../hack_original.js"></script>
+  <script src="hack_original_test.js"></script>
+  <button id="test_all_button">Complete Test</button> <br><br>
+
+  <script src="../utility/defaults.js"></script>
+
+  <script src="../cpu/cpu.js"></script>
+  <script src="cpu_test.js"></script>
+  <button id="test_cpu_button">Test CPU</button>
+
+  <script src="../cpu/alu.js"></script>
+  <script src="alu_test.js"></script>
+  <button id="test_alu_button">Test ALU</button>
+
+  <script src="../rom.js"></script>
+  <script src="rom_test.js"></script>
+  <button id="test_rom_button">Test ROM</button>
+
+  <script src="../memory.js"></script>
+  <script src="memory_test.js"></script>
+  <button id="test_memory_button">Test Memory</button>
+
+  <script src="../cpu/pc.js"></script>
+  <script src="pc_test.js"></script>
+  <button id="test_pc_button">Test PC</button>
+
+  <script src="../utility/instruction.js"></script>
+  <script src="instruction_test.js"></script>
+  <button id="test_instruction_button">Test Instruction</button>
+
+  <script src="../cpu/pc_controller.js"></script>
+  <script src="pc_controller_test.js"></script>
+  <button id="test_pc_controller_button">Test PC Controller</button>
+
+  <br><br>
+  <textarea id="program" name="program" rows="100" cols="15"></textarea>
+
+  <script src="test_page.js"></script>
+</body>
+
+</html>
