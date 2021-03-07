@@ -12,6 +12,7 @@ TODO:
 - Add checks to number inputs.
 - Add BENCHMARK (measuring if actual frame time is lower than requested)
 - Dynamically changeable settings
+- Mobile input
 
 DISTANT FUTURE TODOS:
 - Rewrite using webassembly and in-browser multithreading
