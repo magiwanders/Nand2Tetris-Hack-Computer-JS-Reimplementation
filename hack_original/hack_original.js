@@ -37,6 +37,7 @@ class HACK_original {
 
     this.inM = this.ram.out(this.outM, this.writeM, this.addressM)
     this.instruction = this.rom.out(this.pc)
+    //console.log(this.instruction);
   }
 
 }

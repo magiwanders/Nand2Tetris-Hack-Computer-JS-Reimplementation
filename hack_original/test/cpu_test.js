@@ -104,7 +104,7 @@ class CPU_test {
       '*'
     ]
     var addressM = [
-      0,
+      0,0,
       12345,
       12345,
       23456,

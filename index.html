@@ -25,7 +25,7 @@
           <ul>
             <li><b>Number of setup cycles</b>: describes how many cpu cycles are run before refreshing the screen for the first time. If set to zero the processor directly starts the screen refresh loop (see below).</li>
             <li><b>Cycles per frame</b>: describes how many cpu cycles are run before rendering each frame.</li>
-            <li><b>FPS</b>: describes how many frames are rendered each second. If FPS==0, then only the setup cycles are performed. Execution can be advanced with the 'Cycle' or 'Frame' buttons.</li>
+            <li><b>FPS</b>: describes how many frames are rendered each second. If FPS==0, then only the setup cycles are performed, so you can use manual refresh. Execution can be advanced with the 'Cycle' or 'Frame' buttons.</li>
             <li><b>Ram write process</b>: used for some programs (id est rect.hack or add.hack) that require some values in RAM before the execution to work.</li>
             <li> <b>CLICK 'WRITE'</b> </li>
             <li>A (rough) estimate of the processor frequency is given by [Cycles per frame]*[FPS]. This does not take into consideration JS overheads.</li>
@@ -98,11 +98,27 @@
 
     <h3 id='KBD'>KBD=""</h3>
 
+    <button id="read_rom_button">Read</button> ROM[
+    <input type="number" min=0 max=32767 id="read_rom_address">
+    ] = <p style="display: inline-block;" id="read_rom_result">#</p>
+
+    <br>
     <input type="file" id="rom_file" name="rom_file">
     <br><br>
-    <button id="load_button">Load in ROM</button>
+    <div class="">
+        <!-- <button id="compile_button">Compile</button>
+        <button id="vmtranslate_button">Translate VM</button>
+        <button id="Assemble_button">Assemble</button> -->
+        <button id="load_button">Load in ROM</button>
+    </div>
     <br><br>
-    <textarea id="program" name="program" rows="30" cols="17"></textarea>
+    <div class="">
+        <!-- <textarea id="jack" name="jack" rows="30" cols="40"></textarea>
+        <textarea id="vm" name="vm" rows="30" cols="15"></textarea>
+        <textarea id="asm" name="asm" rows="30" cols="10"></textarea> -->
+        <textarea id="program" name="program" rows="30" cols="17"></textarea>
+    </div>
+
 
 
 

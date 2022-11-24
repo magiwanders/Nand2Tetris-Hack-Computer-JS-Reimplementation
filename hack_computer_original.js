@@ -12,6 +12,7 @@ var reset_button = document.getElementById('reset_button')
 var start_button = document.getElementById('start_button')
 var write_button = document.getElementById('write_button')
 var frame_button = document.getElementById('frame_button')
+var read_rom_button = document.getElementById('read_rom_button')
 var cycle, on_color, off_color
 
 frame_button.onclick = function() {
@@ -57,6 +58,10 @@ settings_button.onclick = function() {
   }
 }
 
+read_rom_button.onclick = function() {
+  document.getElementById('read_rom_result').innerHTML = hack.rom.rom[document.getElementById('read_rom_address').value] 
+}
+
 function refresh_screen() {
   const frame = screen.createImageData(512, 256);
   for (var y = 0; y < Default.height; y++) {
@@ -74,7 +79,7 @@ function refresh_screen() {
 
 refresh_button.onclick = refresh_screen
 
-start_button.onclick = function() {
+start_button.onmousedown = function() {
   if (settings_div.style.display != 'none') {
     settings_div.style.display = 'none';
     settings_button.innerHTML = 'Show Settings'

@@ -49,6 +49,7 @@ class CPU {
     // outM
     this.x = this.registerD
     this.y = inst.a ? inM : this.addressM
+    // console.log(this.y) 
 
     // ALU
     var onlyC = inst.a ? inst.comp-(1<<6) : inst.comp
